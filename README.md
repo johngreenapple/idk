@@ -16,3 +16,11 @@
 
   }
 ?>
+<?php
+require('db.php');
+$query="Select * from hotel";
+$result=mysqli_query($con,$query);
+while($row = mysqli_fetch_array($result))
+{
+echo "<option value='" .$row['room_type']. '- Â£'. $row['price']."'>" . $row['room_type']. "- Â£" . $row['price'] ."</option>";
+}
